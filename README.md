@@ -58,7 +58,14 @@ recsys-project/
 │           └── metadata.json
 │
 ├── role_B/                       # Role B — classical baselines
-│   └── ...                       # Popularity, Matrix Factorisation (SVD/ALS)
+│   ├── models/
+│   │   ├── als_model.py          # ALS matrix factorisation (implicit feedback, for Last.fm)
+│   │   ├── popularity.py         # Popularity-based model (non-personalised baseline)
+│   │   └── svd_model.py          # SVD matrix factorisation (explicit feedback, for MovieLens)
+│   ├── results/
+│   │   ├── als_best_params.py    # Best hyperparameters for ALS (from tuning)
+│   │   └── svd_best_params.py    # Best hyperparameters for SVD (from tuning)
+│   └── run_baselines.py          # Entry point to run all baseline models and generate predictions
 │
 ├── role_C/                       # Role C — deep learning models
 │   ├── models/
