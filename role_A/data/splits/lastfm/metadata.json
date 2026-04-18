@@ -1,0 +1,17 @@
+{
+  "dataset": "lastfm",
+  "feedback_type": "implicit",
+  "n_users": 1090,
+  "n_items": 3646,
+  "n_interactions": 52551,
+  "relevance_threshold": 4,
+  "cold_start_threshold": 5,
+  "train_ratio": 0.8,
+  "val_ratio": 0.1,
+  "test_ratio": 0.1,
+  "train_size": 41597,
+  "val_size": 5039,
+  "test_size": 5915,
+  "sparsity": 0.9867767617648094,
+  "random_seed": 42
+}
