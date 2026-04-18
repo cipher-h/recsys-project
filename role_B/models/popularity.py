@@ -4,12 +4,12 @@ from collections import Counter
 
 class PopularityBaseline:
     def fit(self, train_df):
-        # 只统计正样本（label=1）的流行度
+        # Only count the popularity of positive samples (label = 1)
         pos = train_df[train_df["label"] == 1]
         item_counts = Counter(pos["item_id"].tolist())
         self.popular_items = [item for item, _ in item_counts.most_common()]
 
-        # 记录每个用户看过的物品（推荐时排除）
+        # Record the items each user has viewed (to exclude them during recommendation)
         self.user_seen = (
             train_df.groupby("user_id")["item_id"]
             .apply(set).to_dict()
